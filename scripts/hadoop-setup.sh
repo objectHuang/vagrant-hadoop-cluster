@@ -19,13 +19,13 @@ mkdir -p ../../vagrant/tar/
 # If Hadoop tar is not in system, download it
 ls ../../vagrant/tar/ | 
 grep ^hadoop &> /dev/null || 
-wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz -P ../../vagrant/tar/
+wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz -P ../../vagrant/tar/
 
 # If Hadoop is not installed, install Hadoop
 hadoop version &> /dev/null || {
 ls /usr/local/hadoop &> /dev/null || {
-sudo tar -xvf ../../vagrant/tar/hadoop-3.3.1.tar.gz -C /usr/local/
-sudo mv -T /usr/local/hadoop-3.3.1/ /usr/local/hadoop
+sudo tar -xvf ../../vagrant/tar/hadoop-3.3.6.tar.gz -C /usr/local/
+sudo mv -T /usr/local/hadoop-3.3.6/ /usr/local/hadoop
 }
 sudo chmod 777 /usr/local/hadoop/
 }

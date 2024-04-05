@@ -30,11 +30,11 @@ mkdir -p ../../vagrant/tar/
 # If Scala tar is not in system, download it
 ls ../../vagrant/tar/ | 
 grep ^scala &> /dev/null || 
-wget https://downloads.lightbend.com/scala/2.12.15/scala-2.12.15.deb -P ../../vagrant/tar/
+wget https://downloads.lightbend.com/scala/2.13.13/scala-2.13.13.deb -P ../../vagrant/tar/
 
 # If Scala is not installed, install Scala
 scala -version &> /dev/null || {
-sudo dpkg -i ../../vagrant/tar/scala-2.12.15.deb
+sudo dpkg -i ../../vagrant/tar/scala-2.13.13.deb
 }
 
 # If sbt is not installed, install sbt
@@ -54,7 +54,7 @@ sudo apt-get install -y sbt
 python3 --version &> /dev/null || {
 sudo apt-get update
 sudo apt-get install -y software-properties-common
-sudo apt-get install -y python3.8
+sudo apt-get install -y python3.10
 }
 
 # If pip is not installed, install pip

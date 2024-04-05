@@ -10,13 +10,13 @@ mkdir -p ../../vagrant/tar/
 # If Hive tar is not in system, download it
 ls ../../vagrant/tar/ | 
 grep ^apache-hive &> /dev/null || 
-wget https://dlcdn.apache.org/hive/hive-3.1.2/apache-hive-3.1.2-bin.tar.gz -P ../../vagrant/tar/
+wget https://dlcdn.apache.org/hive/hive-3.1.3/apache-hive-3.1.3-bin.tar.gz -P ../../vagrant/tar/
 
 # If Hive is not installed, install Hive
 hive --version &> /dev/null || {
 ls /usr/local/hive &> /dev/null || {
-sudo tar -xvf ../../vagrant/tar/apache-hive-3.1.2-bin.tar.gz -C /usr/local/
-sudo mv -T /usr/local/apache-hive-3.1.2-bin /usr/local/hive
+sudo tar -xvf ../../vagrant/tar/apache-hive-3.1.3-bin.tar.gz -C /usr/local/
+sudo mv -T /usr/local/apache-hive-3.1.3-bin /usr/local/hive
 }
 sudo chmod 777 /usr/local/hive/
 sudo chmod 777 /usr/local/hive/conf/

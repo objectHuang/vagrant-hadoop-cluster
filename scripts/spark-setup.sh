@@ -10,13 +10,13 @@ mkdir -p ../../vagrant/tar/
 # If Spark tar is not in system, download it
 ls ../../vagrant/tar/ | 
 grep ^spark &> /dev/null || 
-wget https://dlcdn.apache.org/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tgz -P ../../vagrant/tar/
+wget https://dlcdn.apache.org/spark/spark-3.4.2/spark-3.4.2-bin-hadoop3.tgz -P ../../vagrant/tar/
 
 # If Spark is not installed, install Spark
 spark-submit --version &> /dev/null || {
 ls /usr/local/spark &> /dev/null || {
-sudo tar -xvf ../../vagrant/tar/spark-3.2.1-bin-hadoop3.2.tgz -C /usr/local/
-sudo mv -T /usr/local/spark-3.2.1-bin-hadoop3.2 /usr/local/spark
+sudo tar -xvf ../../vagrant/tar/spark-3.4.2-bin-hadoop3.tgz -C /usr/local/
+sudo mv -T /usr/local/spark-3.4.2-bin-hadoop3 /usr/local/spark
 }
 sudo chmod 777 /usr/local/spark/
 }
