@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
     namenode_config.vm.provision "shell", privileged: false, path: "scripts/mysql-setup.sh"    
     namenode_config.vm.provision "shell", privileged: false, path: "scripts/hive-setup.sh"
     #namenode_config.vm.provision "shell", privileged: false, path: "scripts/spark-setup.sh"
-    namenode_config.vm.provision "shell", privileged: false, path: "scripts/namenode-setup.sh"
+    namenode_config.vm.provision "shell", privileged: false, path: "scripts/namenode-start.sh"
     namenode_config.vm.provision "shell", privileged: false, path: "scripts/tez-copy.sh"
   end
 
