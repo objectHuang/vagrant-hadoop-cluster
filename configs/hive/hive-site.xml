@@ -21,4 +21,27 @@
     <name>javax.jdo.option.ConnectionURL</name>
     <value>jdbc:derby:/usr/local/hive/conf/metastore_db;create=true</value>
   </property>
+  <!--hiveserver2 configuration-->
+  <property>
+    <name>hive.server2.thrift.port</name>
+    <value>10000</value>
+	</property>
+  <property>
+    <name>hive.server2.thrift.bind.host</name>
+    <value>namenode</value>
+  </property>
+  <property>
+    <name>hive.metastore.sasl.enabled</name>
+    <value>false</value>
+    <description>If true, the metastore Thrift interface will be secured with SASL. Clients must authenticate with Kerberos.</description>
+  </property>
+  <property>
+    <name>hive.server2.enable.doAs</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>hive.server2.authentication</name>
+    <value>NONE</value>
+  </property>
 </configuration>
+

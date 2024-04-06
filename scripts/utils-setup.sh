@@ -11,6 +11,7 @@ java -version &> /dev/null || {
 sudo add-apt-repository -y ppa:openjdk-r/ppa
 sudo apt-get update
 sudo apt-get install -y openjdk-8-jdk
+sudo apt-get install net-tools
 }
 
 # Set environmental variables

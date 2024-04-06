@@ -45,6 +45,7 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 # Deploy Hive configurations
 sudo cp ../../vagrant/configs/hive/* $HIVE_HOME/conf/
+sudo cp ../../vagrant/scripts/hive/* $HIVE_HOME/bin/
 
 # Start Hive's Metastore
 ls $HIVE_HOME/conf/metastore_db &> /dev/null || $HIVE_HOME/bin/schematool -initSchema -dbType derby &> /dev/null
