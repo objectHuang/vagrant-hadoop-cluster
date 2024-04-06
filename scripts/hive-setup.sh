@@ -14,11 +14,16 @@ ls ../../vagrant/tar/ |
 grep ^apache-hive &> /dev/null || 
 wget https://dlcdn.apache.org/hive/hive-3.1.3/apache-hive-3.1.3-bin.tar.gz -P ../../vagrant/tar/
 
+ls ../../vagrant/tar/ | 
+grep ^mysql-connector-java &> /dev/null || 
+wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.29/mysql-connector-java-8.0.29.jar -P ../../vagrant/tar/
+
 # If Hive is not installed, install Hive
 hive --version &> /dev/null || {
 ls /usr/local/hive &> /dev/null || {
 sudo tar -xvf ../../vagrant/tar/apache-hive-3.1.3-bin.tar.gz -C /usr/local/
 sudo mv -T /usr/local/apache-hive-3.1.3-bin /usr/local/hive
+sudo cp ../../vagrant/tar/mysql-connector-java-8.0.29.jar /usr/local/hive/lib/
 }
 sudo chmod 777 /usr/local/hive/
 sudo chmod 777 /usr/local/hive/conf/
@@ -48,7 +53,7 @@ sudo cp ../../vagrant/configs/hive/* $HIVE_HOME/conf/
 sudo cp ../../vagrant/scripts/hive/* $HIVE_HOME/bin/
 
 # Start Hive's Metastore
-ls $HIVE_HOME/conf/metastore_db &> /dev/null || $HIVE_HOME/bin/schematool -initSchema -dbType derby &> /dev/null
+ls $HIVE_HOME/conf/metastore_db &> /dev/null || $HIVE_HOME/bin/schematool -initSchema -dbType mysql &> /dev/null
 
 
 echo "Setup Hive Completed"

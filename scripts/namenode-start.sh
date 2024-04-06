@@ -9,4 +9,4 @@ export PDSH_RCMD_TYPE=ssh
 echo "############## Starting hadoop in the cluster"
 $HADOOP_HOME/sbin/start-all.sh
 echo "############## Starting Spark in the cluster"
-$SPARK_HOME/sbin/start-all.sh
+#$SPARK_HOME/sbin/start-all.sh
