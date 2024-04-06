@@ -4,6 +4,8 @@
 # INSTALL SPARK
 ######################################
 
+echo "Setup Spark"
+
 # Make tar folder if it doesn't exist
 mkdir -p ../../vagrant/tar/
 
@@ -49,3 +51,4 @@ export SPARK_HOME=/usr/local/spark
 # Deploy Spark configurations
 sudo cp ../../vagrant/configs/spark/* $SPARK_HOME/conf/
 
+echo "Setup Spark Completed"

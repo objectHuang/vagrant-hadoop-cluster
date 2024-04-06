@@ -17,20 +17,20 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-<property>
-<name>fs.defaultFS</name>
-<value>hdfs://namenode:9000</value>
-</property>
-<property>
-<name>dfs.permissions.enabled</name>
-<value>false</value>
-</property>
-<property>
-<name>hadoop.http.staticuser.user</name>
-<value>vagrant</value>
-</property>
-<property>
-<name>hadoop.tmp.dir</name>
-<value>/usr/local/hadoop/data/temp</value>
-</property>
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://namenode:9000</value>
+  </property>
+  <property>
+    <name>dfs.permissions.enabled</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>hadoop.http.staticuser.user</name>
+    <value>vagrant</value>
+  </property>
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/usr/local/hadoop/data/temp</value>
+  </property>
 </configuration>

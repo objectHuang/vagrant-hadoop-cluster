@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+echo "Setup Java/Scala/Python"
+
 ######################################
 # INSTALL JDK
 ######################################
@@ -59,3 +61,5 @@ sudo apt-get install -y python3.10
 
 # If pip is not installed, install pip
 pip3 --version &> /dev/null || sudo apt-get install -y python3-pip
+
+echo "Setup Java/Scala/Python Completed"

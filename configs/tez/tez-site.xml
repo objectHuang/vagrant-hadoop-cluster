@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+  <property>
+    <name>tez.lib.uris</name>
+    <value>hdfs://namenode/tez/tez/share/tez.tar.gz</value>
+    <type>string</type>
+  </property>
+  <property>
+    <name>tez.container.max.java.heap.fraction</name>
+    <value>0.6</value>
+  </property>
+</configuration>

@@ -4,6 +4,8 @@
 # SSH
 #####################################################
 
+echo "Setup SSH"
+
 # Check for private key for vm-vm comm
 [ -f /vagrant/id_rsa ] || {
   ssh-keygen -t rsa -f /vagrant/id_rsa -q -N ''
@@ -47,3 +49,5 @@ grep "192.168.2.10" /etc/hosts &> /dev/null || sudo echo "192.168.2.10 namenode"
 # Avoid host resolution confusions
 grep -v "^127.0." /etc/hosts > hosts.tmp
 sudo mv hosts.tmp /etc/hosts
+
+echo "Setup SSH Completed"

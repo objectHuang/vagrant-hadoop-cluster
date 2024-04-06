@@ -4,6 +4,8 @@
 # INSTALL HIVE
 ######################################
 
+echo "Setup Hive"
+
 # Make tar folder if it doesn't exist
 mkdir -p ../../vagrant/tar/
 
@@ -48,3 +50,4 @@ sudo cp ../../vagrant/configs/hive/* $HIVE_HOME/conf/
 ls $HIVE_HOME/conf/metastore_db &> /dev/null || $HIVE_HOME/bin/schematool -initSchema -dbType derby &> /dev/null
 
 
+echo "Setup Hive Completed"

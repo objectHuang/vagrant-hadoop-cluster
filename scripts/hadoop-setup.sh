@@ -4,6 +4,8 @@
 # INSTALL HADOOP
 ######################################
 
+echo "Setup Hadoop"
+
 # Disable iptables
 sudo ufw disable
 
@@ -45,6 +47,7 @@ export HADOOP_HDFS_HOME=$HADOOP_HOME
 export HADOOP_MAPRED_HOME=$HADOOP_HOME
 export HADOOP_YARN_HOME=$HADOOP_HOME
 export YARN_EXAMPLES=$HADOOP_HOME/share/hadoop/mapreduce
+export HADOOP_LOG_DIR=${HADOOP_YARN_HOME}/logs
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 # HADOOP Variables END
 EOF
@@ -55,6 +58,7 @@ EOF
 
 # Set temporary environmental variables
 export HADOOP_HOME=/usr/local/hadoop
+export PDSH_RCMD_TYPE=ssh
 
 # Deploy Hadoop configurations
 sudo cp ../../vagrant/configs/hadoop/* $HADOOP_HOME/etc/hadoop/
@@ -67,3 +71,5 @@ touch formatted_hdfs
 chmod 444 formatted_hdfs
 }
 } || echo "this is a datanode"
+
+echo "Setup Hadoop Completed"
