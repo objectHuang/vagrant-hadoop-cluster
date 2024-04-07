@@ -6,7 +6,7 @@ This is a little personal project that attempts to create a working virtual Hado
 ## Requirements
 
 - VirtualBox 6.0/7.0
-- Vagrant >2.2.10
+- Vagrant >3.0
 - Minimum of 32GB RAM (as-is, the full cluster allocates 20GB of RAM in total - 8GB for the namenode, 4GB for each datanode), you may adjust the RAM for each node, so it can run on a 16GB machine.
 
 ---
