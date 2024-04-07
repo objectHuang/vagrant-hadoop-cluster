@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", privileged: false, path: "scripts/utils-setup.sh"
   config.vm.provision "shell", privileged: false, path: "scripts/hadoop-setup.sh"
   config.vm.provision "shell", privileged: false, path: "scripts/tez-setup.sh"
+  config.vm.provision "shell", privileged: false, path: "scripts/spark-setup.sh"
   config.vm.provider :virtualbox do |v, override|
     override.vm.box_url = "https://app.vagrantup.com/ubuntu/boxes/focal64/versions/20220207.0.0/providers/virtualbox.box"
     v.customize ["modifyvm", :id, "--memory", "4096"]    
