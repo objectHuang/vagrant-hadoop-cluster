@@ -36,11 +36,6 @@ export PYSPARK_PYTHON=python3
 # Spark Variables END
 EOF
 
-# If PySpark is not installed, install PySpark
-#pip3 list | grep spark &> /dev/null || {
-#echo "i" | pip3 install pyspark
-#}
-
 ######################################
 # CONFIGURE SPARK
 ######################################

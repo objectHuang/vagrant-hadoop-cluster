@@ -14,8 +14,6 @@ $HADOOP_HOME/sbin/start-all.sh
 
 echo "copy Tez to HDFS"
 
-
-
 hdfs dfs -mkdir /tez
 hdfs dfs -mkdir /tmp
 hdfs dfs -put -f /usr/local/tez /tez

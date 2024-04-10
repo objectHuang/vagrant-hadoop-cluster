@@ -8,15 +8,27 @@ mkdir -p ../../vagrant/tar/
 # If Hive tar is not in system, download it
 ls ../../vagrant/tar/ | 
 grep ^zeppelin &> /dev/null || 
-wget https://dlcdn.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz -P ../../vagrant/tar/
+wget https://dlcdn.apache.org/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-all.tgz -P ../../vagrant/tar/
 
 
 ls /usr/local/zeppelin &> /dev/null || {
-sudo tar -xvf ../../vagrant/tar/zeppelin-0.11.0-bin-all.tgz -C /usr/local/
-sudo mv -T /usr/local/zeppelin-0.11.0-bin-all /usr/local/zeppelin
+sudo tar -xvf ../../vagrant/tar/zeppelin-0.10.1-bin-all.tgz -C /usr/local/
+sudo mv -T /usr/local/zeppelin-0.10.1-bin-all /usr/local/zeppelin
 }
 
 sudo chmod 777 /usr/local/zeppelin/
+sudo chown vagrant:vagrant /usr/local/zeppelin/
+sudo chown vagrant:vagrant /usr/local/zeppelin/notebook
+sudo chown vagrant:vagrant /usr/local/zeppelin/*
+sudo chown vagrant:vagrant /usr/local/zeppelin/logs/
+sudo chown vagrant:vagrant /usr/local/zeppelin/conf/
+sudo chown vagrant:vagrant /usr/local/zeppelin/conf/*
+sudo chown vagrant:vagrant /usr/local/zeppelin/notebook/'Spark Tutorial'
+sudo chown vagrant:vagrant /usr/local/zeppelin/notebook/'Spark Tutorial'/*
+sudo rm -rf /usr/local/zeppelin/'Flink Tutorial'/
+sudo rm -rf /usr/local/zeppelin/'Miscellaneous Tutorial'/
+sudo rm -rf /usr/local/zeppelin/'Python Tutorial'/
+sudo rm -rf /usr/local/zeppelin/'R Tutorial'/
 
 grep ZEPPELIN .bashrc &> /dev/null || cat >> .bashrc << 'EOF'
 
