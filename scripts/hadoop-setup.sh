@@ -70,6 +70,6 @@ echo 'Y' | $HADOOP_HOME/bin/hdfs namenode -format &> /dev/null
 touch formatted_hdfs
 chmod 444 formatted_hdfs
 }
-} || echo "this is a datanode"
+} || echo "this is a datanode".
 
 echo "Setup Hadoop Completed"

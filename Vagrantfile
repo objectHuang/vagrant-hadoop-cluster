@@ -41,10 +41,10 @@ Vagrant.configure("2") do |config|
       namenode_config_v.customize ["modifyvm", :id, "--memory", "8192"]
     end
     namenode_config.vm.provision "shell", privileged: false, path: "scripts/mysql-setup.sh"    
-    namenode_config.vm.provision "shell", privileged: false, path: "scripts/hive-setup.sh"
-    #namenode_config.vm.provision "shell", privileged: false, path: "scripts/spark-setup.sh"
-    namenode_config.vm.provision "shell", privileged: false, path: "scripts/namenode-start.sh"
-    namenode_config.vm.provision "shell", privileged: false, path: "scripts/tez-copy.sh"
+    namenode_config.vm.provision "shell", privileged: false, path: "scripts/hive-setup.sh"    
+    namenode_config.vm.provision "shell", privileged: false, path: "scripts/spark-setup-namenode.sh"    
+    namenode_config.vm.provision "shell", privileged: false, path: "scripts/tez-setup-namenode.sh"
+    namenode_config.vm.provision "shell", privileged: false, path: "scripts/zeppelin-setup.sh"cd
   end
 
 end

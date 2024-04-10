@@ -88,3 +88,4 @@ Scaling horizontally by adding datanodes is a matter of editing the following fi
 
 Scaling vertically by adding resources to each node is a matter of editing the following files:
  - [Vagrantfile](./Vagrantfile)
+

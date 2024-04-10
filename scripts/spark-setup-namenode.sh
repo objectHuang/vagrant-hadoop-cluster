@@ -12,9 +12,6 @@ echo "############## Starting hadoop in the cluster"
 $HADOOP_HOME/sbin/start-all.sh
 
 
-echo "############## Starting hive meta data service and hiveserver"
-$HIVE_HOME/bin/hive-start.sh
-
 echo "############## Create spark files under hdfs"
 hdfs dfs -mkdir /spark-logs
 hdfs dfs -mkdir -p /user/spark/applicationHistory
@@ -22,5 +19,4 @@ hdfs dfs -chmod -R 777 /user/spark
 jar cv0f /tmp/spark-libs.jar -C $SPARK_HOME/jars/ .
 hdfs dfs -put /tmp/spark-libs.jar /user/spark/.
 
-echo "############## Starting Spark in the cluster"
-$SPARK_HOME/sbin/start-all.sh
+$HADOOP_HOME/sbin/stop-all.sh

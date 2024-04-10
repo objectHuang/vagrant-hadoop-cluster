@@ -29,15 +29,17 @@ grep SPARK .bashrc &> /dev/null || cat >> .bashrc << 'EOF'
 # Spark Variables START
 export SPARK_HOME=/usr/local/spark
 export SPARK_CONF_DIR=$SPARK_HOME/conf
-PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export SPARK_DAEMON_JAVA_OPTS="-Dspark.history.fs.logDirectory=hdfs://namenode/user/spark/applicationHistory"
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
 export PYSPARK_PYTHON=python3
 # Spark Variables END
 EOF
 
 # If PySpark is not installed, install PySpark
-pip3 list | grep spark &> /dev/null || {
-echo "i" | pip3 install pyspark
-}
+#pip3 list | grep spark &> /dev/null || {
+#echo "i" | pip3 install pyspark
+#}
 
 ######################################
 # CONFIGURE SPARK
