@@ -19,7 +19,7 @@
 <configuration>
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://namenode:8020</value>
+    <value>hdfs://namenode.vagrant.test:8020</value>
   </property>
   <property>
     <name>dfs.permissions.enabled</name>

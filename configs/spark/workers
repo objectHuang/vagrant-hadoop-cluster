@@ -17,6 +17,6 @@
 
 # A Spark Worker will be started on each of the machines listed below.
 
-datanode1
-datanode2
-datanode3
+datanode1.vagrant.test
+datanode2.vagrant.test
+datanode3.vagrant.test

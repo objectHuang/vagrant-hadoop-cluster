@@ -64,7 +64,7 @@ export PDSH_RCMD_TYPE=ssh
 sudo cp ../../vagrant/configs/hadoop/* $HADOOP_HOME/etc/hadoop/
 
 # Format HDFS
-[ $HOSTNAME == namenode ] && {
+[ $HOSTNAME == namenode.vagrant.test ] && {
 cat formatted_hdfs &> /dev/null || {
 echo 'Y' | $HADOOP_HOME/bin/hdfs namenode -format &> /dev/null
 touch formatted_hdfs

@@ -30,7 +30,7 @@ grep SPARK .bashrc &> /dev/null || cat >> .bashrc << 'EOF'
 export SPARK_HOME=/usr/local/spark
 export SPARK_CONF_DIR=$SPARK_HOME/conf
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
-export SPARK_DAEMON_JAVA_OPTS="-Dspark.history.fs.logDirectory=hdfs://namenode/user/spark/applicationHistory"
+export SPARK_DAEMON_JAVA_OPTS="-Dspark.history.fs.logDirectory=hdfs://namenode.vagrant.test/user/spark/applicationHistory"
 export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
 export PYSPARK_PYTHON=python3
 # Spark Variables END

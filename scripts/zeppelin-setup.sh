@@ -20,7 +20,7 @@ sudo chmod 777 /usr/local/zeppelin/
 sudo chown vagrant:vagrant /usr/local/zeppelin/
 sudo chown vagrant:vagrant /usr/local/zeppelin/notebook
 sudo chown vagrant:vagrant /usr/local/zeppelin/*
-sudo chown vagrant:vagrant /usr/local/zeppelin/logs/
+#sudo chown vagrant:vagrant /usr/local/zeppelin/logs/
 sudo chown vagrant:vagrant /usr/local/zeppelin/conf/
 sudo chown vagrant:vagrant /usr/local/zeppelin/conf/*
 sudo chown vagrant:vagrant /usr/local/zeppelin/notebook/'Spark Tutorial'

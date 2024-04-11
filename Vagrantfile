@@ -7,6 +7,16 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
+
+  if Vagrant.has_plugin?("vagrant-cachier")
+    # Configure cached packages to be shared between instances of the same base box.
+    # More info on http://fgrehm.viewdocs.io/vagrant-cachier/usage
+    config.cache.scope = :box    
+    # For more information please check http://docs.vagrantup.com/v2/synced-folders/basic_usage.html
+  end
+
+  #config.landrush.enabled = true
+
   config.vm.base_mac = nil
   config.vm.provision "shell", privileged: false, path: "scripts/ssh-setup.sh"
   config.vm.provision "shell", privileged: false, path: "scripts/utils-setup.sh"
@@ -21,22 +31,22 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :datanode1 do |datanode1_config|
     datanode1_config.vm.network :private_network, ip: "192.168.2.11"
-    datanode1_config.vm.hostname = "datanode1"
+    datanode1_config.vm.hostname = "datanode1.vagrant.test"
   end
 
   config.vm.define :datanode2 do |datanode2_config|
     datanode2_config.vm.network :private_network, ip: "192.168.2.12"
-    datanode2_config.vm.hostname = "datanode2"
+    datanode2_config.vm.hostname = "datanode2.vagrant.test"
   end
 
   config.vm.define :datanode3 do |datanode3_config|
     datanode3_config.vm.network :private_network, ip: "192.168.2.13"
-    datanode3_config.vm.hostname = "datanode3"
+    datanode3_config.vm.hostname = "datanode3.vagrant.test"
   end
 
   config.vm.define :namenode do |namenode_config|
     namenode_config.vm.network :private_network, ip: "192.168.2.10"
-    namenode_config.vm.hostname = "namenode"
+    namenode_config.vm.hostname = "namenode.vagrant.test"
     namenode_config.vm.provider :virtualbox do |namenode_config_v, override|
       namenode_config_v.customize ["modifyvm", :id, "--memory", "8192"]
     end
