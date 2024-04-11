@@ -90,3 +90,24 @@ Scaling horizontally by adding datanodes is a matter of editing the following fi
 Scaling vertically by adding resources to each node is a matter of editing the following files:
  - [Vagrantfile](./Vagrantfile)
 
+To access different service WebUI:
+
+Hadoop/Yarn applications:
+
+http://192.168.2.10:8088/cluster
+
+Hadoop NameNode WebUI:
+
+http://192.168.2.10:9870/dfshealth.html#tab-overview
+
+Hive Server:
+
+http://192.168.2.10:10002
+
+Spark:
+
+http://192.168.2.10:8080
+
+Zeppelin:
+
+http://192.168.2.10:9194
