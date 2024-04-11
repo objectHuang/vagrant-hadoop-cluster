@@ -16,6 +16,14 @@ To provision the cluster:
 
 > vagrant up
 
+as long as you run the vagrant up (not just first time) vagrant will help us to start all the services:
+
+Hadoop Cluster (NameNode, DataNode, Yarn etc)
+Hive (MetaData Service and HiveServer 2)
+Spark Cluster (Master and workers)
+Zeppelin
+
+
 The first time this command is executed, it's going to take awhile, because vagrant will provision the machines. The second time it won't take so long. Also, to "vagrant up" a single node:
 
 > vagrant up < host name >
@@ -35,7 +43,7 @@ To halt the nodes (and save changes):
 
 Again, you can halt a single node:
 
-> vagrant < host name >
+> vagrant halt < host name >
 
 To completely wipe the nodes and state:
 
@@ -49,14 +57,7 @@ To check the statuses of the vagrant environment:
 
 > vagrant global-status
 
-**Start the Hadoop daemons before starting the work:**
 
-> vagrant ssh namenode\
-> **namenode$** start-all.sh
-
-**Start the hive metaserver and hiveserver2 before starting the work on hive:**
-> vagrant ssh namenode\
-> **namenode$** $HIVE_HOME\bin\hive-start.sh
 
 Verify if daemons are working correctly with the jps command in each node. The processes that should be running are listed in the [**Initial cluster setup**](#initial-cluster-setup).
 
