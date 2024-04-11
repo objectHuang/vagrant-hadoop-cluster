@@ -35,7 +35,7 @@ grep HIVE .bashrc &> /dev/null || cat >> .bashrc << 'EOF'
 # Hive Variables START
 export HIVE_HOME=/usr/local/hive
 export HIVE_CONF_DIR=$HIVE_HOME/conf
-PATH=$PATH:$HIVE_HOME/bin:$HIVE_HOME/sbin
+export PATH=$PATH:$HIVE_HOME/bin:$HIVE_HOME/sbin
 # Hive Variables END
 EOF
 
