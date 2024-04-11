@@ -31,22 +31,22 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :datanode1 do |datanode1_config|
     datanode1_config.vm.network :private_network, ip: "192.168.2.11"
-    datanode1_config.vm.hostname = "datanode1.vagrant.test"
+    datanode1_config.vm.hostname = "datanode1"
   end
 
   config.vm.define :datanode2 do |datanode2_config|
     datanode2_config.vm.network :private_network, ip: "192.168.2.12"
-    datanode2_config.vm.hostname = "datanode2.vagrant.test"
+    datanode2_config.vm.hostname = "datanode2"
   end
 
   config.vm.define :datanode3 do |datanode3_config|
     datanode3_config.vm.network :private_network, ip: "192.168.2.13"
-    datanode3_config.vm.hostname = "datanode3.vagrant.test"
+    datanode3_config.vm.hostname = "datanode3"
   end
 
   config.vm.define :namenode do |namenode_config|
     namenode_config.vm.network :private_network, ip: "192.168.2.10"
-    namenode_config.vm.hostname = "namenode.vagrant.test"
+    namenode_config.vm.hostname = "namenode"
     namenode_config.vm.provider :virtualbox do |namenode_config_v, override|
       namenode_config_v.customize ["modifyvm", :id, "--memory", "8192"]
     end
@@ -55,6 +55,8 @@ Vagrant.configure("2") do |config|
     namenode_config.vm.provision "shell", privileged: false, path: "scripts/spark-setup-namenode.sh"    
     namenode_config.vm.provision "shell", privileged: false, path: "scripts/tez-setup-namenode.sh"
     namenode_config.vm.provision "shell", privileged: false, path: "scripts/zeppelin-setup.sh"
+
+    config.vm.provision "shell", privileged: false, path: "scripts/start-all-services.sh",run: "always"
   end
 
 end

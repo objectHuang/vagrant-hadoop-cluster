@@ -4,7 +4,7 @@
 <configuration>
   <property>
     <name>tez.lib.uris</name>
-    <value>hdfs://namenode.vagrant.test/tez/tez/share/tez.tar.gz</value>
+    <value>hdfs://namenode:8020/tez/tez/share/tez.tar.gz</value>
     <type>string</type>
   </property>
   <property>

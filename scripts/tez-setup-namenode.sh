@@ -1,11 +1,11 @@
-
-#!/bin/bash 
+#!/bin/bash
 
 export HADOOP_HOME=/usr/local/hadoop
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export HADOOP_YARN_HOME=$HADOOP_HOME
 export HIVE_HOME=/usr/local/hive
 export PDSH_RCMD_TYPE=ssh
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 
 echo "############## Starting hadoop in the cluster"

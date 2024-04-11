@@ -39,7 +39,7 @@
   </property>
   <property>
     <name>javax.jdo.option.ConnectionURL</name>
-    <value>jdbc:mysql://namenode.vagrant.test:3306/hivemetastore?createDatabaseIfNotExist=true</value>    
+    <value>jdbc:mysql://namenode:3306/hivemetastore?createDatabaseIfNotExist=true</value>    
   </property>
   <!--hiveserver2 configuration-->
   <property>
@@ -48,7 +48,7 @@
 	</property>
   <property>
     <name>hive.server2.thrift.bind.host</name>
-    <value>namenode.vagrant.test</value>
+    <value>namenode</value>
   </property>
   <property>
     <name>hive.metastore.sasl.enabled</name>
