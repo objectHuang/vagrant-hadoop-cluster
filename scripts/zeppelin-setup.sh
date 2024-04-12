@@ -16,19 +16,7 @@ sudo tar -xvf ../../vagrant/tar/zeppelin-0.10.1-bin-all.tgz -C /usr/local/
 sudo mv -T /usr/local/zeppelin-0.10.1-bin-all /usr/local/zeppelin
 }
 
-sudo chmod 777 /usr/local/zeppelin/
-sudo chown vagrant:vagrant /usr/local/zeppelin/
-sudo chown vagrant:vagrant /usr/local/zeppelin/notebook
-sudo chown vagrant:vagrant /usr/local/zeppelin/*
-#sudo chown vagrant:vagrant /usr/local/zeppelin/logs/
-sudo chown vagrant:vagrant /usr/local/zeppelin/conf/
-sudo chown vagrant:vagrant /usr/local/zeppelin/conf/*
-sudo chown vagrant:vagrant /usr/local/zeppelin/notebook/'Spark Tutorial'
-sudo chown vagrant:vagrant /usr/local/zeppelin/notebook/'Spark Tutorial'/*
-sudo rm -rf /usr/local/zeppelin/'Flink Tutorial'/
-sudo rm -rf /usr/local/zeppelin/'Miscellaneous Tutorial'/
-sudo rm -rf /usr/local/zeppelin/'Python Tutorial'/
-sudo rm -rf /usr/local/zeppelin/'R Tutorial'/
+
 
 grep ZEPPELIN .bashrc &> /dev/null || cat >> .bashrc << 'EOF'
 
@@ -40,5 +28,14 @@ EOF
 export ZEPPELIN_HOME=/usr/local/zeppelin
 
 sudo cp ../../vagrant/configs/zeppelin/* $ZEPPELIN_HOME/conf
+
+sudo chmod 777 /usr/local/zeppelin/
+sudo chown vagrant:vagrant /usr/local/zeppelin/
+sudo chown vagrant:vagrant /usr/local/zeppelin/*
+sudo chown vagrant:vagrant /usr/local/zeppelin/notebook
+sudo chown vagrant:vagrant /usr/local/zeppelin/notebook/*
+sudo chown vagrant:vagrant /usr/local/zeppelin/conf/
+sudo chown vagrant:vagrant /usr/local/zeppelin/conf/*
+
 
 echo "Setup Zeppelin Completed"
