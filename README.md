@@ -94,11 +94,11 @@ To access different service WebUI:
 
 Hadoop/Yarn applications:
 
-http://192.168.2.10:8088/cluster
+http://192.168.2.10:8088
 
 Hadoop NameNode WebUI:
 
-http://192.168.2.10:9870/dfshealth.html#tab-overview
+http://192.168.2.10:9870
 
 Hive Server:
 
@@ -111,3 +111,7 @@ http://192.168.2.10:8080
 Zeppelin:
 
 http://192.168.2.10:9194
+
+Livy:
+
+http://192.168.2.10:8998

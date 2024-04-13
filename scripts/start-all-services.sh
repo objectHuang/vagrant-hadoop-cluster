@@ -9,6 +9,7 @@ export PDSH_RCMD_TYPE=ssh
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 export PATH=$PATH:$HIVE_HOME/bin:$HIVE_HOME/sbin
 export ZEPPELIN_HOME=/usr/local/zeppelin
+export LIVY_HOME=/usr/local/livy
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 
 
@@ -24,6 +25,9 @@ $SPARK_HOME/sbin/start-all.sh
 
 echo "############## Starting zeppelin services in the cluster"
 $ZEPPELIN_HOME/bin/zeppelin-daemon.sh start
+
+echo "############## Starting livy services in the cluster"
+$LIVY_HOME/bin/livy-server start
 
 echo "############## Waitng hadoop services in the cluster one more time"
 sleep 10

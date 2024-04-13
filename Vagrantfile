@@ -55,6 +55,7 @@ Vagrant.configure("2") do |config|
     namenode_config.vm.provision "shell", privileged: false, path: "scripts/spark-setup-namenode.sh"    
     namenode_config.vm.provision "shell", privileged: false, path: "scripts/tez-setup-namenode.sh"
     namenode_config.vm.provision "shell", privileged: false, path: "scripts/zeppelin-setup.sh"
+    namenode_config.vm.provision "shell", privileged: false, path: "scripts/livy-setup.sh"
 
     namenode_config.vm.provision "shell", privileged: false, path: "scripts/start-all-services.sh",run: "always"
   end
