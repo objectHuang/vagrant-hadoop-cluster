@@ -19,6 +19,8 @@ spark-submit --version &> /dev/null || {
 ls /usr/local/spark &> /dev/null || {
 sudo tar -xvf ../../vagrant/tar/spark-3.4.2-bin-hadoop3.tgz -C /usr/local/
 sudo mv -T /usr/local/spark-3.4.2-bin-hadoop3 /usr/local/spark
+
+sudo cp ../../vagrant/tar/mysql-connector-java-8.0.29.jar /usr/local/spark/jars/
 }
 sudo chmod 777 /usr/local/spark/
 }

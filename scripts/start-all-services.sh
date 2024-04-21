@@ -22,6 +22,7 @@ sleep 10
 
 echo "############## Starting spark in the cluster"
 $SPARK_HOME/sbin/start-all.sh
+$SPARK_HOME/sbin/start-history-server.sh
 
 echo "############## Starting zeppelin services in the cluster"
 $ZEPPELIN_HOME/bin/zeppelin-daemon.sh start
@@ -34,3 +35,6 @@ sleep 10
 
 echo "############## Starting hive services in the cluster"
 $HIVE_HOME/bin/hive-start.sh
+
+echo "############## Starting spark thrift server in the cluster"
+$SPARK_HOME/bin/start-thriftserver.sh

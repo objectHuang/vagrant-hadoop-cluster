@@ -44,6 +44,12 @@ sudo chmod 777 /etc/hosts
 grep "192.168.2.11" /etc/hosts &> /dev/null || sudo echo "192.168.2.11 datanode1" >> /etc/hosts
 grep "192.168.2.12" /etc/hosts &> /dev/null || sudo echo "192.168.2.12 datanode2" >> /etc/hosts
 grep "192.168.2.13" /etc/hosts &> /dev/null || sudo echo "192.168.2.13 datanode3" >> /etc/hosts
+grep "192.168.2.14" /etc/hosts &> /dev/null || sudo echo "192.168.2.14 datanode4" >> /etc/hosts
+grep "192.168.2.15" /etc/hosts &> /dev/null || sudo echo "192.168.2.15 datanode5" >> /etc/hosts
+grep "192.168.2.16" /etc/hosts &> /dev/null || sudo echo "192.168.2.16 datanode6" >> /etc/hosts
+grep "192.168.2.17" /etc/hosts &> /dev/null || sudo echo "192.168.2.17 datanode7" >> /etc/hosts
+grep "192.168.2.18" /etc/hosts &> /dev/null || sudo echo "192.168.2.18 datanode8" >> /etc/hosts
+
 grep "192.168.2.10" /etc/hosts &> /dev/null || sudo echo "192.168.2.10 namenode" >> /etc/hosts
 
 # Avoid host resolution confusions
